@@ -86,7 +86,7 @@ def sk_ids():
 
 # answer when asking for score and decision about one customer
 # Test local : http://127.0.0.1:8000/api/scoring_customer/?SK_ID_CURR=100038
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/scoring_cust/?SK_ID_CURR=100038
+# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/scoring_customer/?SK_ID_CURR=100038
 @app.get("/api/scoring_customer/")
 def scoring_customer(SK_ID_CURR : int = 100038):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -147,7 +147,7 @@ def client_info(SK_ID_CURR : int = 100001):
     return {"selected_client_info": selected_client_info_json
            }
 
-# answer when asking for the feature descriptions
+### answer when asking for a selected feature value for a selected client
 # Test local : http://127.0.0.1:8000/api/feat_desc/
 # Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/feat_desc/
 @app.get("/api/feat_desc/")
@@ -174,7 +174,7 @@ def feat_val(SK_ID_CURR : int = 100001, FEAT_NAME : str = 'SK_ID_CURR'):
             "feat_val": feat_val
            }
 
-# answer when asking for NN of the selected client samples
+### answer when asking for Nearest Neighbors of a selected client samples
 # Test local : http://127.0.0.1:8000/api/NN_samples/?SK_ID_CURR=100001
 # Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/NN_samples/?SK_ID_CURR=100001
 @app.get("/api/NN_samples/")
