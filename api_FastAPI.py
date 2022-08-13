@@ -23,12 +23,8 @@ app = FastAPI()
 # Load DATA
 #######################################################################################################
 print('*************    Loading DATA ...')
-# Train data
-application_train_domain = pd.read_csv('./data/application_train_domain.csv')
-#print(application_train_domain.shape)
-
 # Test data
-application_test_domain = pd.read_csv('./data/application_test_domain.csv')
+application_test_domain = pd.read_csv('./data/application_test_domain_1000.csv')
 
 # Transformed Train data
 df_X_train = pd.read_csv('./data/df_X_train.csv')
