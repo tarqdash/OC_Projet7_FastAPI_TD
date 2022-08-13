@@ -1,32 +1,26 @@
-# API Flask du modèle de classification déployée sur Heroku
+# API FastAPI du modèle de classification déployée sur Heroku
 ## Projet 7 du parcours Data Scientist
 
 Cette API est interrogée par un dashboard développé grâce à Streamlit.
 Pour interagir avec l'api (tester les requêtes) :
 
 ### view when API is launched (index)
-https://oc-api-flask-mm.herokuapp.com
-
-### answer when asking for sk_ids
-https://oc-api-flask-mm.herokuapp.com/api/sk_ids/
-
-### return json object of feature description when needed
-https://oc-api-flask-mm.herokuapp.com/api/feat_desc
-    
-### return json object of feature importance (lgbm attribute)
-https://oc-api-flask-mm.herokuapp.com/api/feat_imp
-
-### return data of one customer when requested (SK_ID_CURR)
-https://oc-api-flask-mm.herokuapp.com/api/data_cust/?SK_ID_CURR=100128
-
-### return data of 20 neighbors of one customer when requested (SK_ID_CURR)
-https://oc-api-flask-mm.herokuapp.com/api/neigh_cust/?SK_ID_CURR=100128
-
-### return all data of training set when requested
-https://oc-api-flask-mm.herokuapp.com/api/all_proc_data_tr/
+https://oc-api-FastAPI-td.herokuapp.com
 
 ### answer when asking for score and decision about one customer
-https://oc-api-flask-mm.herokuapp.com/api/scoring_cust/?SK_ID_CURR=100128
+https://oc-api-FastAPI-td.herokuapp.com/api/scoring_customer/?SK_ID_CURR=100038
 
-### get shap values of the customer and 20 nearest neighbors
-https://oc-api-flask-mm.herokuapp.com/api/shap_values/?SK_ID_CURR=100128
+### answer when asking for shap plot params for one selected customer
+https://oc-api-FastAPI-td.herokuapp.com/api/shap_plot_params/?SK_ID_CURR=100001
+
+### answer when asking for Cient Information for one selected customer
+https://oc-api-FastAPI-td.herokuapp.com/api/client_info/?SK_ID_CURR=100001
+
+### answer when asking for the feature descriptions
+https://oc-api-FastAPI-td.herokuapp.com/api/feat_desc/
+
+### answer when asking for a selected feature value for a selected client
+https://oc-api-FastAPI-td.herokuapp.com/api/feat_val/?SK_ID_CURR=100001&FEAT_NAME=SK_ID_CURR
+
+### answer when asking for Nearest Neighbors of a selected client samples
+https://oc-api-FastAPI-td.herokuapp.com/api/NN_samples/?SK_ID_CURR=100001
