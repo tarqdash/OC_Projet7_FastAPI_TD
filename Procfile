@@ -1,1 +1,1 @@
-web: uvicorn api_FastAPI:app
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker api_FasAPI:app
