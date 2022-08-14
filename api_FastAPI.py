@@ -1,4 +1,5 @@
 # numpy and pandas for data manipulation
+# numpy and pandas for data manipulation
 import numpy as np
 import pandas as pd 
 import sklearn
@@ -7,11 +8,6 @@ from sklearn.neighbors import NearestNeighbors
 
 import shap
 
-# File system manangement
-import os
-# Suppress warnings 
-import warnings
-warnings.filterwarnings('ignore')
 import pickle
 
 from fastapi import FastAPI
