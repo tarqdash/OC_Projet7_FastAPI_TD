@@ -1,5 +1,4 @@
 # numpy and pandas for data manipulation
-# numpy and pandas for data manipulation
 import numpy as np
 import pandas as pd 
 import sklearn
@@ -21,12 +20,6 @@ app = FastAPI()
 print('*************    Loading DATA ...')
 # Test data
 application_test_domain = pd.read_csv('./data/application_test_domain_1000.csv')
-
-# Transformed Train data
-df_X_train = pd.read_csv('./data/df_X_train.csv')
-
-# transformed Test data
-df_X_test = pd.read_csv('./data/df_X_test.csv')
 
 # Test 1000 samples data
 df_X_test_1000 = pd.read_csv('./data/df_X_test_1000.csv')
@@ -78,7 +71,7 @@ def sk_ids():
 
 # answer when asking for score and decision about one customer
 # Test local : http://127.0.0.1:8000/api/scoring_customer/?SK_ID_CURR=100038
-# Test Heroku : https://dashboard.heroku.com/apps/oc-api-fastapi-td/api/scoring_customer/?SK_ID_CURR=100038
+# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/scoring_customer/?SK_ID_CURR=100038
 @app.get("/api/scoring_customer/")
 def scoring_customer(SK_ID_CURR : int = 100038):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -92,7 +85,7 @@ def scoring_customer(SK_ID_CURR : int = 100038):
 
 # answer when asking for shap plot params for one selected customer
 # Test local : http://127.0.0.1:8000/api/shap_plot_params/?SK_ID_CURR=100001
-# Test Heroku : https://dashboard.heroku.com/apps/oc-api-fastapi-td/api/shap_plot_params/?SK_ID_CURR=100001
+# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/shap_plot_params/?SK_ID_CURR=100001
 @app.get("/api/shap_plot_params/")
 def shap_plot_params(SK_ID_CURR : int = 100001):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -115,7 +108,7 @@ def shap_plot_params(SK_ID_CURR : int = 100001):
 
 # answer when asking for Cient Information for one selected customer
 # Test local : http://127.0.0.1:8000/api/client_info/?SK_ID_CURR=100001
-# Test Heroku : https://dashboard.heroku.com/apps/oc-api-fastapi-td/api/client_info/?SK_ID_CURR=100001
+# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/client_info/?SK_ID_CURR=100001
 @app.get("/api/client_info/")
 def client_info(SK_ID_CURR : int = 100001):
     print('SK_ID_CURR :',SK_ID_CURR)
