@@ -1,1 +1,1 @@
-web: gunicorn api_FastAPI:app --log-file -
+gunicorn -k uvicorn.workers.UvicornWorker api_FastAPI:app
