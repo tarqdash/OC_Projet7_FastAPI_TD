@@ -54,7 +54,7 @@ with open("./model/best_model_optim_threshold.pkl", "rb") as f:
 
 # answer when asking for sk_ids
 # Test local: http://127.0.0.1:8000/api/sk_ids/
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/sk_ids/
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/sk_ids/
 @app.get("/api/sk_ids/")
 def sk_ids():
     # Extract list of all the 'SK_ID_CURR' ids in the df_X_test_1000 dataframe
@@ -68,7 +68,7 @@ def sk_ids():
 
 # answer when asking for score and decision about one customer
 # Test local : http://127.0.0.1:8000/api/scoring_customer/?SK_ID_CURR=100038
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/scoring_customer/?SK_ID_CURR=100038
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/scoring_customer/?SK_ID_CURR=100038
 @app.get("/api/scoring_customer/")
 def scoring_customer(SK_ID_CURR : int = 100038):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -82,7 +82,7 @@ def scoring_customer(SK_ID_CURR : int = 100038):
 
 # answer when asking for shap plot params for one selected customer
 # Test local : http://127.0.0.1:8000/api/shap_plot_params/?SK_ID_CURR=100001
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/shap_plot_params/?SK_ID_CURR=100001
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/shap_plot_params/?SK_ID_CURR=100001
 @app.get("/api/shap_plot_params/")
 def shap_plot_params(SK_ID_CURR : int = 100001):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -105,7 +105,7 @@ def shap_plot_params(SK_ID_CURR : int = 100001):
 
 # answer when asking for Cient Information for one selected customer
 # Test local : http://127.0.0.1:8000/api/client_info/?SK_ID_CURR=100001
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/client_info/?SK_ID_CURR=100001
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/client_info/?SK_ID_CURR=100001
 @app.get("/api/client_info/")
 def client_info(SK_ID_CURR : int = 100001):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -131,7 +131,7 @@ def client_info(SK_ID_CURR : int = 100001):
 
 ### answer when asking for a selected feature value for a selected client
 # Test local : http://127.0.0.1:8000/api/feat_desc/
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/feat_desc/
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/feat_desc/
 @app.get("/api/feat_desc/")
 def feat_desc():
     # Convert the pd.Series (df row) of customer's data to JSON
@@ -143,7 +143,7 @@ def feat_desc():
 
 # answer when asking for the feature descriptions
 # Test local : http://127.0.0.1:8000/api/feat_val/?SK_ID_CURR=100001&FEAT_NAME=SK_ID_CURR
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/feat_val/?SK_ID_CURR=100001&FEAT_NAME=SK_ID_CURR
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/feat_val/?SK_ID_CURR=100001&FEAT_NAME=SK_ID_CURR
 @app.get("/api/feat_val/")
 def feat_val(SK_ID_CURR : int = 100001, FEAT_NAME : str = 'SK_ID_CURR'):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -158,7 +158,7 @@ def feat_val(SK_ID_CURR : int = 100001, FEAT_NAME : str = 'SK_ID_CURR'):
 
 ### answer when asking for Nearest Neighbors of a selected client samples
 # Test local : http://127.0.0.1:8000/api/NN_samples/?SK_ID_CURR=100001
-# Test Heroku : https://oc-api-FastAPI-td.herokuapp.com/api/NN_samples/?SK_ID_CURR=100001
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/NN_samples/?SK_ID_CURR=100001
 @app.get("/api/NN_samples/")
 def NN_samples(SK_ID_CURR : int = 100001):
     print('SK_ID_CURR :',SK_ID_CURR)
@@ -182,4 +182,4 @@ def NN_samples(SK_ID_CURR : int = 100001):
 # homepage route
 @app.get("/")
 def read_root():
-    return {"message": "FastAPI Home Page...OC_Projet7_FastAPI_TD"}
+    return {"message": "Home Page...OC_Projet7_FastAPI_TD"}
