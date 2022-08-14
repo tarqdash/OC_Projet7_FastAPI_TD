@@ -4,9 +4,6 @@ import pandas as pd
 import sklearn
 import json
 from sklearn.neighbors import NearestNeighbors
-
-import shap
-
 import pickle
 
 from fastapi import FastAPI
