@@ -1,1 +1,1 @@
-web: uvicorn api_FastAPI:app --log-file -
+web: uvicorn api_FastAPI:app
