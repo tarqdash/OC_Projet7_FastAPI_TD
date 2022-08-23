@@ -21,9 +21,9 @@ application_test_domain = pd.read_csv('./data/application_test_domain_1000.csv')
 # Test 1000 samples data
 df_X_test_1000 = pd.read_csv('./data/df_X_test_1000.csv')
 
-# Test 1000 samples data
+# festure descriptions dataframe
 df_feat_desc = pd.read_csv('./data/HomeCredit_columns_description.csv')
-df_feat_desc_names = pd.DataFrame(df_feat_desc[(df_feat_desc['Table']=='application_{train|test}.csv')]['Row'])
+df_feat_desc_names = application_test_domain.columns
 #print(df_feat_desc_names)
 
 # Cient Information data
