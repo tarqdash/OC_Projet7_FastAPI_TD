@@ -23,6 +23,7 @@ df_X_test_1000 = pd.read_csv('./data/df_X_test_1000.csv')
 
 # Test 1000 samples data
 df_feat_desc = pd.read_csv('./data/HomeCredit_columns_description.csv')
+df_feat_desc_names = pd.DataFrame(data_desc[(df_feat_desc['Table']=='application_{train|test}.csv')]['Row'])
 
 # Cient Information data
 df_Client_Info = pd.read_csv('./data/df_Client_Info.csv')
@@ -136,9 +137,11 @@ def client_info(SK_ID_CURR : int = 100001):
 def feat_desc():
     # Convert the pd.Series (df row) of customer's data to JSON
     feat_desc_json = json.loads(df_feat_desc.to_json())
+    feat_desc_names_json = json.loads(df_feat_desc_names.to_json())
     # Return the data
     return {
-            "feat_desc": feat_desc_json
+            "feat_desc": feat_desc_json,
+            "feat_desc_names": feat_desc_names_json
            }
 
 # answer when asking for the feature descriptions
