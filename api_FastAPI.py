@@ -138,7 +138,7 @@ def client_info(SK_ID_CURR : int = 100001):
 def feat_desc():
     # Convert the pd.Series (df row) data to JSON
     feat_desc_json = json.loads(df_feat_desc.to_json())
-    feat_desc_names_json = json.loads(df_feat_desc_names['Row'].to_json())
+    feat_desc_names_json = json.loads(df_feat_desc_names.to_json())
     # Return the data
     return {
             "feat_desc": feat_desc_json,
