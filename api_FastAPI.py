@@ -67,10 +67,10 @@ def sk_ids():
 
 
 # answer when asking for score and decision about one customer
-# Test local : http://127.0.0.1:8000/api/scoring_customer/?SK_ID_CURR=100038
-# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/scoring_customer/?SK_ID_CURR=100038
+# Test local : http://127.0.0.1:8000/api/scoring_customer/?SK_ID_CURR=100001
+# Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/scoring_customer/?SK_ID_CURR=100001
 @app.get("/api/scoring_customer/")
-def scoring_customer(SK_ID_CURR : int = 100038):
+def scoring_customer(SK_ID_CURR : int = 100001):
     print('SK_ID_CURR :',SK_ID_CURR)
     #compute the index of SK_ID_CURR
     ind = application_test_domain[application_test_domain['SK_ID_CURR']==SK_ID_CURR].index
