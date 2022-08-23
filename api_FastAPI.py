@@ -23,7 +23,8 @@ df_X_test_1000 = pd.read_csv('./data/df_X_test_1000.csv')
 
 # Test 1000 samples data
 df_feat_desc = pd.read_csv('./data/HomeCredit_columns_description.csv')
-df_feat_desc_names = pd.DataFrame(data_desc[(df_feat_desc['Table']=='application_{train|test}.csv')]['Row'])
+df_feat_desc_names = pd.DataFrame(df_feat_desc[(df_feat_desc['Table']=='application_{train|test}.csv')]['Row'])
+#print(df_feat_desc_names)
 
 # Cient Information data
 df_Client_Info = pd.read_csv('./data/df_Client_Info.csv')
@@ -135,9 +136,9 @@ def client_info(SK_ID_CURR : int = 100001):
 # Test Heroku : https://oc-api-fastapi-td.herokuapp.com/api/feat_desc/
 @app.get("/api/feat_desc/")
 def feat_desc():
-    # Convert the pd.Series (df row) of customer's data to JSON
+    # Convert the pd.Series (df row) data to JSON
     feat_desc_json = json.loads(df_feat_desc.to_json())
-    feat_desc_names_json = json.loads(df_feat_desc_names.to_json())
+    feat_desc_names_json = json.loads(df_feat_desc_names['Row'].to_json())
     # Return the data
     return {
             "feat_desc": feat_desc_json,
